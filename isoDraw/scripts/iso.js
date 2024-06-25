@@ -165,7 +165,13 @@ function init() {
       }
     }
     
-    addBtnAction('download', download)
+    addBtnAction('download', ()=> {
+      settings.factor = 1
+      updateCanvas()
+      download()
+      settings.factor = 2
+      updateCanvas()
+    })
     addBtnAction('add-layer', ()=> {
       state.cells.push([])
       elements.max.innerHTML = state.cells.length - 1
