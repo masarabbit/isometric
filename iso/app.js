@@ -20,7 +20,7 @@
 
     const bearData = {
       bear: null,
-      speed: 200,
+      speed: 300,
       motionrTimer: null,
       frameOffset: 0,
       size: 72,
@@ -139,6 +139,7 @@
         }
         moveBear(route[i])
         updateZindex(bearData.bear, route[i - 1])
+      
         bearData.motionTimer = setTimeout(()=>{
           chainMotion(route, i + 1)
         }, bearData.speed)
